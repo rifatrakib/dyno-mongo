@@ -1,5 +1,6 @@
 from pymongo import MongoClient
 import certifi
+import redis
 import os
 
 
@@ -16,3 +17,12 @@ class MongoConnectionManager():
     
     def __exit__(self, exc_type, exc_value, exc_traceback):
         self.client.close()
+
+
+def get_redis_instance():
+    redis_instance = redis.Redis(
+        host=os.environ.get('REDIS_HOST'),
+        port=os.environ.get('REDIS_PORT'),
+        password=os.environ.get('REDIS_AUTH')
+    )
+    return redis_instance
