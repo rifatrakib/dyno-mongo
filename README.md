@@ -9,3 +9,7 @@ What the pipelines included in this repository does are explained below in a few
 #### 1. Complex grouping:
 
 This pipeline shows consecutive group queries in the query pipeline to generate count of documents grouped by a broader field and sum of a numerical field grouped by another dependent field of the former.
+
+#### 2. Dependency builder
+
+This pipeline is created dynamically to fetch a graph structured dependency data prepared using raw computational power of MongoDB aggregation framework.
